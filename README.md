@@ -40,6 +40,8 @@ docker-compose up
  - task_load_files_into_db: загружает данные в PostgreSQL (PythonOperator, SQLalchemy)
  - task_transform_data_in_db: преобразовывает данные для результирующей витрины (BashOperator, dbt)
  - task_test_data_in_db: тестирует данные на отсутствие дублей и null (BashOperator, dbt)
+ 
+![DAG](https://github.com/oliallburn/otus_diploma/blob/master/images/air.png)
 
 ### Data Build Tool:
 Фреймворк DBT используется как непосредственно для трансформации, так и для тестирования механической корректности данных:
@@ -83,6 +85,7 @@ sources:
 ip add
 ```
 В итоге используем 172.18.0.1:5432 как host и делаем столбчатую таблицу.
+![DASH](https://github.com/oliallburn/otus_diploma/blob/master/images/graf.png)
 
 ### Дальнейшее развитие:
 Сделать систему менее кукольной, добавив, как минимум, получение входящих пакетов из Kafka - в текущей системе мы забираем файлы из папки, в которой они оказываются волшебным образом. И вместо обычной файловой системы использовать Hadoop и Spark, конечно же. Но оставим это дата-инженерам :)
