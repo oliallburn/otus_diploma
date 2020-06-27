@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: source
+    schema: public
+    tables:
+      - name: resp_view
+        columns:
+          - name: duration
+            tests:
+              - not_null
+      - name: ch_id
+        columns:
+          - name: mediapackageid
+            tests:
+              - unique
